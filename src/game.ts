@@ -1,38 +1,45 @@
-import 'phaser';
-import { BootScene } from '@scenes/BootScene';
-import { GameScene } from '@scenes/GameScene';
+import * as Phaser from "phaser";
 
-export class Game extends Phaser.Game {
-  constructor(config: Phaser.Types.Core.GameConfig) {
-    super(config);
+
+const config = {
+  type: Phaser.CANVAS,
+  backgroundColor: "#125555",
+  width: 800,
+  height: 640,
+  scene: Newscene,
+  physics:{
+    default: "arcade",
+    arcade:{
+      gravity:{y:500},
+      debug:false
+    }
+  },
+};
+
+const game = new Phaser.Game(config);
+
+/*export default class Demo extends Phaser.Scene {
+
+
+
+  constructor() {
+    super("demo");
   }
-}
 
-window.addEventListener('load', () => {
-  const cfg: Phaser.Types.Core.GameConfig = {
-    width: 375,
-    height: 812,
-    type: Phaser.AUTO,
-    parent: 'game',
-    scene: [BootScene, GameScene],
-    input: {
-      keyboard: true,
-    },
-    physics: {
-      default: 'arcade',
-      arcade: {
-        gravity: {
-          y: 1000,
-        },
-        debug: false,
-      },
-    },
-    backgroundColor: '#222',
-    render: {
-      pixelArt: true,
-      antialias: false,
-    },
-  };
+  preload() {
+    this.load.image("tiles", "./assets/map/output.png");
+   // this.load.image("border", "./assets/map/water.png");
+    this.load.tilemapTiledJSON("map", "./assets/map/map.json");
+  }
 
-  const game = new Game(cfg);
-});
+  create() {
+   // const map = this.make.tilemap({ key: "map" });
+    //const tilesetGrass = map.addTilesetImage("grass", "tiles");
+   // const tilesetWater = map.addTilesetImage("water", "border");
+    this.tiles = this.add.image(0,0,'tiles');
+    //const ground = map.createLayer("grass", tilesetGrass, 0, 0);
+    //const water = map.createLayer("water", tilesetWater, 0, 0);
+    
+  }
+
+}*/
