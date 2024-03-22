@@ -1,12 +1,12 @@
 import * as Phaser from "phaser";
-
+import {Newscene} from "./scenes/Newscene";
 
 const config = {
-  type: Phaser.CANVAS,
+  type: Phaser.CANVAS, // auto
   backgroundColor: "#125555",
   width: 800,
   height: 640,
-  scene: Newscene,
+  scene: [Newscene],
   physics:{
     default: "arcade",
     arcade:{
@@ -14,6 +14,7 @@ const config = {
       debug:false
     }
   },
+  pixelArt: true
 };
 
 const game = new Phaser.Game(config);
