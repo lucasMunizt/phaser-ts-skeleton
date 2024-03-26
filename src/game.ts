@@ -4,7 +4,7 @@ import {Newscene} from "./scenes/Newscene";
 const config = {
   type: Phaser.CANVAS, // auto
   backgroundColor: "#125555",
-  width: 800,
+  width: 1200,
   height: 640,
   scene: [Newscene],
   physics:{
